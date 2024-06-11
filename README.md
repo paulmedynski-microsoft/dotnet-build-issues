@@ -115,12 +115,10 @@ Either of these options would permit lock files and artifacts paths to co-exist.
 I think the first option is the most flexible since it allows you to restore
 separately from building.
 
-A workaround is to manually copy the restore meta-data files into the expected
-artifacts path before building.
+A workaround for a simple single-project solution like this is to use the ```-p ArtifactsPath``` option.
 
 ```
-$ mkdir -p artifacts/obj/dotnet-build-issues
-$ cp obj/dotnet-build-issues.csproj.nuget.* obj/project.* artifacts/obj/dotnet-build-issues/
+$ dotnet restore --locked-mode -p ArtifactsPath=artifacts
 $ dotnet build -c Release --no-restore --artifacts-path artifacts
   dotnet-build-issues -> /home/paul/dev/paulmedynski/dotnet-build-issues/artifacts/bin/dotnet-build-issues/debug/dotnet-build-issues.dll
 
