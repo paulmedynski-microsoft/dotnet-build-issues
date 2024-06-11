@@ -4,6 +4,8 @@ A project to help reproduce issues with the dotnet build command.
 
 ## No-Restore & Artifacts-Path Incompatible
 
+https://github.com/dotnet/sdk/issues/41530
+
 The ```dotnet restore``` and ```dotnet build``` commands don't play nicely when
 you're trying to use lock files and an artifacts path.
 
